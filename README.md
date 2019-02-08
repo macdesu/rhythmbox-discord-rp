@@ -1,2 +1,5 @@
 # rhythmbox-discord-rp
-Discord's Rich Presence for RhythmBox
+
+## Discord Rich Presence for RhythmBox
+
+This will become a Rhythmbox plugin.
