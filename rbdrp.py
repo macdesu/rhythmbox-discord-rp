@@ -21,7 +21,7 @@ def discord():
 			small_image = "pause-circle"
 			timestamp = " (Paused)"
 		if len(artist) < 2:
-			artist = "IDLE"
+			artist = "   "
 		if len(title) < 2:
 			title = "IDLE"
 		RPC.update(details=artist, state=title + timestamp, large_image="rhythmbox", small_image=small_image)
