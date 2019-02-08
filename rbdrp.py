@@ -1,13 +1,15 @@
 #!/usr/bin/python
+import os, time
 from pypresence import Presence
-import time
-import os
 
 client_id = "543459024390324245"
-now_playing = os.popen("rhythmbox-client --print-playing").read()
-
 RPC = Presence(client_id)
 RPC.connect()
-RPC.update(state=now_playing)
+
 while True:
-    time.sleep(15)
+	time.sleep(1)
+	artist = os.popen("rhythmbox-client --print-playing-format=\"%ta\"").read()
+	title = os.popen("rhythmbox-client --print-playing-format=\"%tt\"").read()
+	start = os.popen("rhythmbox-client --print-playing-format=\"%te\"").read()
+	end = os.popen("rhythmbox-client --print-playing-format=\"%td\"").read()
+	RPC.update(details=artist, state=title)
