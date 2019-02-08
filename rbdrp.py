@@ -4,7 +4,7 @@ from pypresence import Presence
 # from gi.repository import GObject, RB, Peas
 
 def discord():
-	old_timestamp = ''
+	old_timestamp = '0:00'
 	client_id = "543459024390324245"
 	RPC = Presence(client_id)
 	RPC.connect()
@@ -20,6 +20,10 @@ def discord():
 		else:
 			small_image = "pause-circle"
 			timestamp = " (Paused)"
+		if len(artist) < 2:
+			artist = "IDLE"
+		if len(title) < 2:
+			title = "IDLE"
 		RPC.update(details=artist, state=title + timestamp, large_image="rhythmbox", small_image=small_image)
 
 discord()
