@@ -16,9 +16,10 @@ def discord():
 		timestamp = os.popen("rhythmbox-client --print-playing-format=\"(%te / %td)\"").read()
 		if timestamp != old_timestamp:
 			old_timestamp = timestamp
-			small_image = "play"
+			small_image = "play-circle"
 		else:
-			small_image = "pause"
+			small_image = "pause-circle"
+			timestamp = " (Paused)"
 		RPC.update(details=artist, state=title + timestamp, large_image="rhythmbox", small_image=small_image)
 
 discord()
