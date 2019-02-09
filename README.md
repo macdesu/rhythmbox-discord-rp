@@ -2,6 +2,6 @@
 
 ## Discord Rich Presence for RhythmBox
 
-This will become a Rhythmbox plugin.
+This will eventually become a Rhythmbox plugin.
 
 ![Sample](/imgs/sample.png)
